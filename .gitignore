@@ -17,7 +17,7 @@ dist
 sunpy.egg-info
 paver-minilib.zip
 doc/_build/*
-doc/source/api
+doc/api
 doc/html
 docs
 .tox/

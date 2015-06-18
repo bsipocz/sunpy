@@ -17,7 +17,7 @@ if  [ $NUM_SUNPY -gt 0 -o  $NUM_DOCS -gt  0 ]; then
     CWD="$(pwd)"
     DOC_DIR=$BASE_DIR/doc/source
     rm -r $DOC_DIR/../_build
-    rm -r $DOC_DIR/api
+    rm -r $DOC_DIR/../api
     rm -r $DOC_DIR/_generated
 
     cd $DOC_DIR

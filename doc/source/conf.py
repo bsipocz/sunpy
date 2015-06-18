@@ -176,3 +176,6 @@ edit_on_github_branch = "master"
 
 edit_on_github_source_root = ""
 edit_on_github_doc_root = "docs"
+
+
+automodapi_toctreedirnm = '../api'
