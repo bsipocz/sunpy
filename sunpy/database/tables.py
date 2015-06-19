@@ -420,7 +420,8 @@ def entries_from_file(file, default_waveunit=None):
     respectively. If the wavelength unit can be read, the values of `wavemin`
     and `wavemax` are converted to nm (nanometres). The value of the `file`
     parameter is used to set the attribute `path` of each generated database
-    entry.
+    entry. If `file` is a `~astropy.io.fits.HDUList` it will generate a
+    database entry for each extension.
 
     Parameters
     ----------
