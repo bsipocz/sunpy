@@ -19,12 +19,12 @@ parsing function which can deal with most every format that a user may encounter
 `sunpy.time.parse_time()`, this function takes a string as input and returns a datetime object.
 Here are few examples of formats which `sunpy.time.parse_time()` accepts: ::
 
-    from sunpy.time import *
-    parse_time('2007-05-04T21:08:12')
-    parse_time('2007/05/04T21:08:12')
-    parse_time('20070504T210812')
-    parse_time('2007-May-04 21:08:12')
-    parse_time('20070504_210812')
+    >>> from sunpy.time import parse_time, TimeRange
+    >>> parse_time('2007-05-04T21:08:12')
+    >>> parse_time('2007/05/04T21:08:12')
+    >>> parse_time('20070504T210812')
+    >>> parse_time('2007-May-04 21:08:12')
+    >>> parse_time('20070504_210812')
 
 Each of the above returns the same datetime object. All SunPy functions which require
 time as an input sanitize the input using parse_time. You can also pass it a `datetime.datetime`
@@ -39,11 +39,11 @@ ranges. This occurs very often with plotting or when searching for data. To deal
 time ranges SunPy provides the `sunpy.time.TimeRange` object. A TimeRange object can be created
 very easily by providing it with two time strings, a start time and an end time: ::
 
-    time_range = TimeRange('2010/03/04 00:10', '2010/03/04 00:20')
+    >>> time_range = TimeRange('2010/03/04 00:10', '2010/03/04 00:20')
 
 You can also pass the start and end times as a tuple: ::
 
-    time_range = TimeRange(('2010/03/04 00:10', '2010/03/04 00:20'))
+    >>> time_range = TimeRange(('2010/03/04 00:10', '2010/03/04 00:20'))
 
 This object makes use of parse_time() so it can accept a wide variety of time formats.
 A time range object can also be created by providing a start time and a duration.
@@ -51,29 +51,29 @@ The duration must be provided as a `datetime.timedelta` object or
 time-equivalent `astropy.units.Quantity`
 example: ::
 
-    import astropy.units as u
-    time_range = TimeRange('2010/03/04 00:10', 400 * u('s'))
+    >>> import astropy.units as u
+    >>> time_range = TimeRange('2010/03/04 00:10', 400 * u.sec)
 
 or: ::
 
-    from datetime import timedelta
-    time_range = TimeRange('2010/03/04 00:10', timedelta(0, 400))
+    >>> from datetime import timedelta
+    >>> time_range = TimeRange('2010/03/04 00:10', timedelta(0, 400))
 
 The time range objects provides a number of useful functions. For example, you can easily
 get the time at the center of your interval or the length of your interval in minutes
 or days or seconds: ::
 
-    time_range.center
-    time_range.minutes
-    time_range.days
-    time_range.seconds
+    >>> time_range.center
+    >>> time_range.minutes
+    >>> time_range.days
+    >>> time_range.seconds
 
 It also makes it easy to create new time ranges. The functions next() and previous()
 do an inplace update to the object by either adding or subtracting the same time interval
 . This could be useful if you need to step through a number of time ranges. For example,
 if you needed time ranges that spanned 30 minutes over a period of 4 hours you could do: ::
 
-    for a in range(8):
-        print(time_range.next())
+    >>> for a in range(8):
+    ...     print(time_range.next())
 
 Check out the code reference for the `sunpy.time.TimeRange` object for more information.
