@@ -54,15 +54,14 @@ you can use the
 method and visualize the resulting
 data using :py:func:`pyplot.plot`.::
 
-.. doctest-skip::
 
-    >>> import matplotlib.pyplot as plt
-    >>> plt.figure()
-    >>> bg = image.auto_const_bg()
-    >>> plt.plot(image.freq_axis, bg)
-    >>> plt.xlabel("Frequency [MHz]")
-    >>> plt.ylabel("Intensity")
-    >>> plt.show() # This might not be necessary if you are using pylab.
+    >>> import matplotlib.pyplot as plt   # doctest: +SKIP
+    >>> plt.figure()   # doctest: +SKIP
+    >>> bg = image.auto_const_bg()   # doctest: +SKIP
+    >>> plt.plot(image.freq_axis, bg)   # doctest: +SKIP
+    >>> plt.xlabel("Frequency [MHz]")   # doctest: +SKIP
+    >>> plt.ylabel("Intensity")   # doctest: +SKIP
+    >>> plt.show() # This might not be necessary if you are using pylab.   # doctest: +SKIP
 
 .. image:: ../../images/spectra_ex3.png
 
