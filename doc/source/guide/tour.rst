@@ -284,8 +284,8 @@ measurements in meters, then ::
 
 or ::
 
-    >>> circle_area(4 * u.m).to(u.imperial.foot ** 2)   # doctest: +ELLIPSIS
-    <Quantity 541.053150224542... ft2>
+    >>> circle_area(4 * u.m).to(u.imperial.foot ** 2)
+    <Quantity 541.0531502245425 ft2>
 
 Astropy units and quantities are very powerful, and are used throughout SunPy.  To find out more about units and
 quantities, please consult the `the astropy tutorial <http://www.astropy.org/astropy-tutorials/Quantities.html>`__ and
