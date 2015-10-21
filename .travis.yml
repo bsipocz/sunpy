@@ -61,7 +61,7 @@ matrix:
          - os: linux
            env: TEST_MODE='doctest'
          - os: linux
-           env: PYTHON_VERSION=3.4
+           env: PYTHON_VERSION=3.5
            env: TEST_MODE='python3'
 
 # If the online build fails, we don't want it to report the whole build broken.
