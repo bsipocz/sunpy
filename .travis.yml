@@ -25,12 +25,12 @@ env:
         - NUMPY_VERSION='stable'
         - ASTROPY_VERSION='stable'
         - MAIN_CMD='python setup.py'
-        - CONDA_CHANNELS='astropy astropy-ci-extras conda-forge'
+        - CONDA_CHANNELS='astropy astropy-ci-extras conda-forge defaults'
         - CONDA_DEPENDENCIES='glymur openjpeg Cython jinja2 scipy matplotlib requests beautifulsoup4 sqlalchemy scikit-image pytest wcsaxes pyyaml pandas nomkl pytest-cov coverage'
         - PIP_DEPENDENCIES='suds-jurko sphinx-gallery'
 
     matrix:
-        - PYTHON_VERSION=2.7 SETUP_CMD='egg_info' 
+        - PYTHON_VERSION=2.7 SETUP_CMD='egg_info'
         - PYTHON_VERSION=3.4 SETUP_CMD='egg_info'
         - PYTHON_VERSION=3.5 SETUP_CMD='egg_info'
         - PYTHON_VERSION=2.7 SETUP_CMD='test'
