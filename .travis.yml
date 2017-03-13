@@ -30,36 +30,8 @@ env:
         - PIP_DEPENDENCIES='suds-jurko sphinx-gallery glymur'
 
     matrix:
-        - PYTHON_VERSION=2.7 SETUP_CMD='egg_info' 
-        - PYTHON_VERSION=3.4 SETUP_CMD='egg_info'
-        - PYTHON_VERSION=3.5 SETUP_CMD='egg_info'
-        - PYTHON_VERSION=2.7 SETUP_CMD='test'
-        - PYTHON_VERSION=3.4 SETUP_CMD='test'
-        - PYTHON_VERSION=3.5 SETUP_CMD='test'
-
-matrix:
-    include:
-         - os: osx
-           env: PYTHON_VERSION=2.7 SETUP_CMD='test'
-
-         - os: linux
-           env: JOB="Astropy Dev" PYTHON_VERSION=3.5 SETUP_CMD='test' ASTROPY_VERSION='development'
-
-         - os: linux
-           env: JOB="Numpy Prev" PYTHON_VERSION=2.7 SETUP_CMD='test' NUMPY_VERSION=$PREVIOUS_NUMPY
-
-         - os: linux
-           env: JOB="Documentation" PYTHON_VERSION=2.7 SPHINX_VERSION=1.4 SETUP_CMD='build_sphinx -w'
-
-         - os: linux
-           env: JOB="Figures" PYTHON_VERSION=2.7 SETUP_CMD='test --figure' CONDA_DEPENDENCIES=''
-
-         - os: linux
-           env: JOB="Online" PYTHON_VERSION=3.5 SETUP_CMD='test --online --coverage'
-
-    # allow_failures has to repeat the environment from the matrix above to mark it as such
-    allow_failures:
-      - env: JOB="Online" PYTHON_VERSION=3.5 SETUP_CMD='test --online --coverage'
+        - PYTHON_VERSION=3.4 SETUP_CMD='test' DEBUG=True
+        - PYTHON_VERSION=3.5 SETUP_CMD='test' DEBUG=True
 
 install:
     - git clone git://github.com/astropy/ci-helpers.git
